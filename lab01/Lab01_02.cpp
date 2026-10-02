@@ -3,7 +3,7 @@ using namespace std;
 
 
 int main(){
-    string imie = "Użytkownik";
+    string imie ;
     cout << "Podaj imie: ";
     cin >> imie;
     cout << "Siema, " << imie << endl;
