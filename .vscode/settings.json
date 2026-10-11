@@ -8,5 +8,14 @@
   "code-runner.saveFileBeforeRun": true,
   "code-runner.clearPreviousOutput": true,
   "code-runner.preserveFocus": false,
+<<<<<<< HEAD
   "C_Cpp.errorSquiggles": "disabled"
+=======
+
+  "github.copilot.enable": {
+      "*": false
+  },
+  "github.copilot.nextEditSuggestions.enabled": false,
+  "editor.inlineSuggest.enabled": false
+>>>>>>> d1caca8a3256f5db0559bffe1f1657e29318f8b9
 }
