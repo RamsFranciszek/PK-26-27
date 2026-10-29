@@ -32,7 +32,7 @@ int main() {
     cout << endl;
     for (int i=0 ; i<=n ; i=i+2){
         cout << i << " ";
-    }
+    };
 
 
 // poruszanie się po szachownicy / konsoli w przestrzeni 2D
