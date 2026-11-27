@@ -1,5 +1,5 @@
 #include <iostream>
-#include <fstream>
+#include <fstream> // umożliwia otwarcie pliku i zabawę z nim
 #include <string>
 
 using namespace std;
@@ -35,7 +35,7 @@ void wyszukajSlowaZLitera(ifstream& file) {
 
 
 void wyszukajLinieZWyrazem(ifstream& file) {
-
+    
 }
 
 // argc w skrócie, to liczba argumentów przy uruchomieniu programu
@@ -72,13 +72,13 @@ int main(int argc, char* argv[]) {
     } */
    
      if (!file) {
-        cerr << "Nie można otworzyć pliku: " << argv[1] << endl;
+        cerr << "Nie można otworzyć pliku: " << argv[1] << endl; // cerr to cout dla errorów
         return 1;
     }
 
     // Wczytywanie i wyświetlanie zawartości pliku
     string line;
-    while (getline(file, line)) {
+    while (getline(file, line)) { // getline potrzebuje pliku i typ string który będzie odzielać linią
         cout << line << endl;
     }
 

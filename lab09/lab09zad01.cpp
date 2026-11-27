@@ -1,9 +1,14 @@
 #include <iostream>
 #include <string>
+#include <cmath>
 using namespace std;
 
 // ... dopisz dziesiątki, nastki, jednosci
-
+const char* dziesiatki(int liczba){
+    static const char* dziesiatki[] = {"dwadieścia", "trzydzieści", "czterdzieści", "pięćdziesiąt",
+                                    "sześćdziesiąt", "siedemdziesiąt", "osiemdziesiąt", "dziewięćdziesiąt"};
+    return dziesiatki[((liczba/10)-2)%10];
+}
 
 // Funkcja zwraca nazwę setek
 const char* setki(int liczba) {
@@ -13,7 +18,7 @@ const char* setki(int liczba) {
 }
 
 int main() {
-    int liczba, s;
+    int liczba, s, d;
     string wynik;
 
     cout << "Podaj liczbe: ";
@@ -23,6 +28,7 @@ int main() {
 
     s = liczba / 100;                       // Setki 
 
+    cout << "Debug: ((liczba/10)-2)%10"
     if (s > 0) {
         wynik += setki(liczba);             // Wywołanie funkcji setki
         wynik += " ";
