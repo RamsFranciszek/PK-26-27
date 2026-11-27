@@ -5,10 +5,26 @@ using namespace std;
 
 // ... dopisz dziesiątki, nastki, jednosci
 const char* dziesiatki(int liczba){
-    static const char* dziesiatki[] = {"dwadieścia", "trzydzieści", "czterdzieści", "pięćdziesiąt",
+    static const char* dziesiatki[] = {" ", "dziesięć", "dwadieścia", "trzydzieści", "czterdzieści", "pięćdziesiąt",
                                     "sześćdziesiąt", "siedemdziesiąt", "osiemdziesiąt", "dziewięćdziesiąt"};
-    return dziesiatki[((liczba/10)-2)%10];
+    
+        return dziesiatki[(liczba/10)%10];
 }
+
+const char* nastki(int liczba){
+    static const char* nastki[] = {" ", "jednenaście", "dwanaście", "trzynaście", "czternaście", "piętnaście",
+                                    "szesnaście", "siedemnaście", "osiemnaście", "dziewiętnaście"};
+    
+        return nastki[ liczba % 100 - 10 ];
+}
+
+const char* jednostki(int liczba){
+    static const char* jednostki[] = {" ", "jeden", "dwa", "trzy", "cztery", "pięC",
+                                    "sześć", "siedem", "osiem", "dziewięć"};
+    
+        return jednostki[ liczba % 10 ];
+}
+
 
 // Funkcja zwraca nazwę setek
 const char* setki(int liczba) {
@@ -18,22 +34,32 @@ const char* setki(int liczba) {
 }
 
 int main() {
-    int liczba, s, d;
+    int liczba, s, d, n, j;
     string wynik;
 
     cout << "Podaj liczbe: ";
     cin >> liczba;
 
-    cout << "Debug: liczba / 100 = " << liczba / 100 << endl;
 
     s = liczba / 100;                       // Setki 
 
-    cout << "Debug: ((liczba/10)-2)%10"
+    d = (liczba/10)%10
+
+    n = liczba % 100 - 10; 
+
+    j = liczba % 10;
+
     if (s > 0) {
         wynik += setki(liczba);             // Wywołanie funkcji setki
         wynik += " ";
     }
-
+    if (d>0){
+        wynik += dziesiatki(liczba);
+        wynik += " ";
+    }
+    if(liczba % 100 < 20 && liczba % 100 > 10){
+        wynik += n
+    }
     cout << wynik << endl;
     return 0;
 }
